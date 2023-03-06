@@ -71,8 +71,8 @@ if __name__ == '__main__':
         # Change Parameters
         args.ssl_option = 'multi_task'
         args.time_length = 6
-        args.mask_scale = 0.5
-        args.mask_ratio = 5.0
+        args.mask_scale = 0.3
+        args.mask_ratio = 3.0
         args.cnn_embed_dim = 128
         args.pos_max_length = 128
         args.depth = 2
