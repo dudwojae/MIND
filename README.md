@@ -4,22 +4,23 @@ This repository provides the code to implement the MIND.
 # File Description
     .
     ├── agents
-    │   └── stacore_agent.py      # The agent script to select actions and optimize polices
+    │   └── mind_agent.py         # The agent script to select actions and optimize polices
     ├── environment                     
     │   ├── env.py                # Atari environment
     ├── networks                     
-    │   ├── stacore_network.py    # Deep neural networks code needed to train STACoRe
+    │   ├── encoder.py            # Deep neural networks code needed to train MIND
+    │   ├── modules.py            # Deep neural network modules code needed to train MIND
     ├── tasks                     
-    │   ├── stacore.py            # Code to train or test STACoRe
-    │   ├── stacore_test.py       # Code used when testing in stacore.py
+    │   ├── mind.py               # Code to train or test MIND
+    │   ├── mind_test.py          # Code used when testing in mind.py
     ├── utils                    
     │   ├── args.py               # Arguments needed to run the code
-    │   ├── automatic.py          # Upper confidence bound (UCB) algorithm code for automatic data augmentation
-    │   ├── layers.py             # Deep neural networks initialization
-    │   ├── loss.py               # STACoRe loss
+    │   ├── augmentation.py       # Masking augmentation code
+    │   ├── loss.py               # Inverse dynamics loss
     │   ├── memory.py             # Prioritized experience replay
     │   ├── mypath.py             # The path to saver or load the file
-    └── run_stacore.py            # The main run code
+    │   ├── weight_init.py        # Deep neural networks initialization
+    └── run_mind.py            # The main run code
     
 # Installation
 ~~~
