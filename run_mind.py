@@ -68,16 +68,12 @@ if __name__ == '__main__':
     for i, exp_seed in enumerate(experiments):
         args.seed = int(exp_seed)
 
-        # Change Parameters
+        # Default Parameters
         args.ssl_option = 'multi_task'
-        args.time_length = 6  # Default 6
-        args.mask_scale = 0.02
-        args.mask_ratio = 0.3
-        args.cnn_embed_dim = 128
-        args.pos_max_length = 128
+        args.time_length = 6
+        args.mask_scale = 0.33
+        args.mask_ratio = 3.3
         args.depth = 2
-        args.num_heads = 2
-        args.mlp_ratio = 1.0
         args.momentum = 0.999
 
         for game_name in game_list:

@@ -65,7 +65,7 @@ def mind_parser():
                         help='Experience replay memory capacity')
     # Add Real Time Step Hyperparameter (Can Change)
     parser.add_argument('--time-length', type=int, default=6,
-                        choices=[2, 4, 6, 8],
+                        choices=[2, 4, 6, 8, 10],
                         help='Consider Real Time Length (History + Sequence Length / 4)')
 
     # Training hyperparamters (Don't Change)
@@ -123,10 +123,10 @@ def mind_parser():
     parser.add_argument('--pos-max-length', type=int, default=128,
                         help='Positional Encoding Max Length.')
     parser.add_argument('--depth', type=int, default=2,
-                        choices=[2, 3, 4],
+                        choices=[1, 2, 4, 6],
                         help='Transformer Depth.')
     parser.add_argument('--num-heads', type=int, default=2,
-                        choices=[1, 2, 4],
+                        choices=[2],
                         help='Transformer Number of Heads.')
     parser.add_argument('--mlp-ratio', type=float, default=1.0,
                         help='Transformer MLP Ratio.')
@@ -134,11 +134,11 @@ def mind_parser():
                         help='Transformer QKV Bias.')
 
     # Data Augmentation Option (Reconstruction)
-    parser.add_argument('--mask-scale', type=float, default=3.0,
-                        choices=[1.0, 3.0, 5.0, 7.0, 9.0],
+    parser.add_argument('--mask-scale', type=float, default=0.33,
+                        choices=[0.02, 0.15, 0.33, 0.55, 0.7, 1.1, 1.7],
                         help='Mask Augmenation Scale Values.')
-    parser.add_argument('--mask-ratio', type=float, default=3.0,
-                        choices=[1.0, 3.0, 5.0, 7.0, 9.0],
+    parser.add_argument('--mask-ratio', type=float, default=3.3,
+                        choices=[0.3, 1.5, 3.3, 3.5, 7.0, 9.0, 9.9],
                         help='Mask Augmenation Ratio Values.')
 
     # Experiment Option (Inverse Dynamics, Reconstruction)
