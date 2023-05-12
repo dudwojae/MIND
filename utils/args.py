@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+# MIT License
+#
+# Copyright (c) 2017 Kai Arulkumaran
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+# ==============================================================================
 import atari_py
 import argparse
 
@@ -93,7 +102,7 @@ def mind_parser():
                         help='Adam epsilon')
 
     # Evaluate parameter (Don't Change)
-    parser.add_argument('--train_mode', type=bool, default=False,
+    parser.add_argument('--train_mode', type=bool, default=True,
                         help='Train or Test Mode')
     parser.add_argument('--evaluate', type=bool, default=False,
                         help='Evaluate only')
@@ -125,11 +134,11 @@ def mind_parser():
                         help='Transformer QKV Bias.')
 
     # Data Augmentation Option (Reconstruction)
-    parser.add_argument('--mask-scale', type=float, default=0.3,
-                        choices=[0.1, 0.3, 0.5],
+    parser.add_argument('--mask-scale', type=float, default=3.0,
+                        choices=[1.0, 3.0, 5.0, 7.0, 9.0],
                         help='Mask Augmenation Scale Values.')
     parser.add_argument('--mask-ratio', type=float, default=3.0,
-                        choices=[1.0, 3.0, 5.0],
+                        choices=[1.0, 3.0, 5.0, 7.0, 9.0],
                         help='Mask Augmenation Ratio Values.')
 
     # Experiment Option (Inverse Dynamics, Reconstruction)

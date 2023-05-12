@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+# MIT License
+#
+# Copyright (c) 2017 Kai Arulkumaran
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+# ==============================================================================
 from __future__ import division
 
 import os
@@ -7,8 +16,6 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-import kornia.augmentation as aug
 
 from networks.modules import MLPHead, InverseHead
 from networks.encoder import DQN, TransformerEncoder
@@ -34,12 +41,7 @@ class MINDAgent:
         self.delta_z = (args.V_max - args.V_min) / (self.atoms - 1)
         self.coeff = args.lambda_coef if args.game in ['pong', 'boxing', 'private_eye', 'freeway'] else 1.
 
-        # Initial Data Augmentation (Random Crop)
-        self.init_aug = nn.Sequential(aug.RandomCrop((80, 80)),
-                                      nn.ReplicationPad2d(4),
-                                      aug.RandomCrop((args.resize, args.resize)))
-
-        # Shift & Intensity Augmentation
+        # Masking Augmentation
         self.augmentations = Augmentations(args=args)
 
         # Define Model (Default: Off-Policy Reinforcement Learning)

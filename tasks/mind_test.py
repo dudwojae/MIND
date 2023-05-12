@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+# MIT License
+#
+# Copyright (c) 2017 Kai Arulkumaran
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+# ==============================================================================
 from __future__ import division
 
 import os
@@ -22,7 +31,7 @@ def test(args, T, learner, val_memory, metrics, result_path, evaluate=False):
 
     # Test performance over several episodes
     done = True
-    for _ in tqdm(range(args.evaluation_episodes)):
+    for _ in range(args.evaluation_episodes):
         while True:
             if done:
                 state, reward_sum, done = env.reset(), 0, False
@@ -56,7 +65,7 @@ def test(args, T, learner, val_memory, metrics, result_path, evaluate=False):
         metrics['rewards'].append(T_rewards)
         metrics['Qs'].append(T_Qs)
         torch.save(metrics, os.path.join(result_path,
-                                         f'mtssl_rainbow_metrics.pt'))
+                                         f'mind_rainbow_metrics.pt'))
 
         # Plot
         _plot_line(metrics['steps'], metrics['rewards'], 'Reward', path=result_path)

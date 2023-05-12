@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+# MIT License
+#
+# Copyright (c) 2017 Kai Arulkumaran
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+# ==============================================================================
 from __future__ import division
 
 import os
@@ -80,9 +89,9 @@ class MIND:
                                      self.metrics,
                                      self.result_path,
                                      evaluate=True)
-            print(f'Avg. reward: {str(avg_reward)} | Avg. Q: {str(avg_Q)}')
+            # print(f'Avg. reward: {str(avg_reward)} | Avg. Q: {str(avg_Q)}')
 
-            self.log(f'| Avg.reward: {str(avg_reward)} | Avg. Q: {str(avg_Q)}')
+            # self.log(f'| Avg.reward: {str(avg_reward)} | Avg. Q: {str(avg_Q)}')
 
         else:
             # Training loop
@@ -150,7 +159,7 @@ class MIND:
                     # Checkpoint the network
                     if (self.args.checkpoint_interval != 0) and (T % self.args.checkpoint_interval == 0):
                         self.learner.save(self.result_path,
-                                          name=f'mtssl_rainbow.pt')
+                                          name=f'mind_rainbow.pt')
 
                 state = next_state
 

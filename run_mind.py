@@ -62,17 +62,17 @@ if __name__ == '__main__':
                  'gopher', 'hero', 'jamesbond', 'kangaroo', 'krull',
                  'kung_fu_master', 'ms_pacman', 'pong', 'private_eye',
                  'qbert', 'road_runner', 'seaquest', 'up_n_down']
-
-    experiments = list(np.random.randint(10000, size=5))
+    
+    experiments = list(np.random.randint(5000, size=5))
 
     for i, exp_seed in enumerate(experiments):
         args.seed = int(exp_seed)
 
         # Change Parameters
         args.ssl_option = 'multi_task'
-        args.time_length = 6
-        args.mask_scale = 0.3
-        args.mask_ratio = 3.0
+        args.time_length = 6  # Default 6
+        args.mask_scale = 0.02
+        args.mask_ratio = 0.3
         args.cnn_embed_dim = 128
         args.pos_max_length = 128
         args.depth = 2
