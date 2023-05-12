@@ -23,6 +23,7 @@ This repository provides the code to implement the MIND.
     └── run_mind.py            # The main run code
     
 # Installation
+The python version we used is 3.6.12.
 ~~~
 pip install -r requirements.txt
 ~~~
