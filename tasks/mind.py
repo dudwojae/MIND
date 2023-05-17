@@ -83,9 +83,9 @@ class MIND:
                                      self.metrics,
                                      self.result_path,
                                      evaluate=True)
-            # print(f'Avg. reward: {str(avg_reward)} | Avg. Q: {str(avg_Q)}')
+            print(f'Avg. reward: {str(avg_reward)} | Avg. Q: {str(avg_Q)}')
 
-            # self.log(f'| Avg.reward: {str(avg_reward)} | Avg. Q: {str(avg_Q)}')
+            self.log(f'| Avg.reward: {str(avg_reward)} | Avg. Q: {str(avg_Q)}')
 
         else:
             # Training loop
