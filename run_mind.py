@@ -48,8 +48,8 @@ def main(args: argparse, game_name: str = None, exp_num: int = None):
     torch.cuda.manual_seed(args.seed)
     torch.backends.cudnn.enabled = args.enable_cudnn
 
-    mtssl = MIND(args, results_dir)
-    mtssl.run_mind()
+    mind = MIND(args, results_dir)
+    mind.run_mind()
 
 
 if __name__ == '__main__':
@@ -63,7 +63,7 @@ if __name__ == '__main__':
                  'kung_fu_master', 'ms_pacman', 'pong', 'private_eye',
                  'qbert', 'road_runner', 'seaquest', 'up_n_down']
     
-    experiments = list(np.random.randint(5000, size=5))
+    experiments = list(np.random.randint(10000, size=10))
 
     for i, exp_seed in enumerate(experiments):
         args.seed = int(exp_seed)
