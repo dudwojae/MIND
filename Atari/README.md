@@ -17,7 +17,7 @@
     │   ├── memory.py             # Prioritized experience replay
     │   ├── mypath.py             # The path to saver or load the file
     │   ├── weight_init.py        # Deep neural networks initialization
-    └── run_mind.py            # The main run code
+    └── run_mind.py               # The main run code
     
 # Installation
 The python version we used is 3.6.13.
