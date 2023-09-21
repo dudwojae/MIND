@@ -21,7 +21,7 @@
     └── run_mind_dmc.py               # The main run code
     
 # Installation
-The python version we used is 3.6.13.
+The python version we used is 3.7.11.
 ~~~
 pip install -r requirements.txt
 ~~~
